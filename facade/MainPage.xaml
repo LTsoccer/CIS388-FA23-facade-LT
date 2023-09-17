@@ -12,19 +12,117 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
 
+
             </Grid.RowDefinitions>
+            
+            <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="30" Margin="10"/>
 
+            <Grid Padding="0" Grid.Row="0" ColumnSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-            <!--<RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="48" MaximumHeightRequest="150"/>-->
-            <StackLayout HorizontalOptions="Fill" BackgroundColor="#facade" Padding="8" Grid.Row="0" Orientation="Horizontal"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.27*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.23*" />
+                </Grid.ColumnDefinitions>
 
-                <Label Text="#" FontSize="60" VerticalOptions="Center" />
-                <Label Text="FACADE"
+           
+            <!--<StackLayout HorizontalOptions="Fill"  Padding="60" Grid.Row="0" Orientation="Horizontal"  >-->
+                <Label Text="#" FontSize="60" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="0"/>
+                <Grid Padding="0" Grid.Row="1" Grid.Column="1" ColumnSpacing="1">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="f"
                        FontSize="60"
                        VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Grid.Column="0"
                        />
+                    <Label Text="a"
+   FontSize="60"
+   VerticalOptions="Center"
+   HorizontalOptions="Center"
+   Grid.Column="1"
+   />
+                    <Label Text="c"
+   FontSize="60"
+   VerticalOptions="Center"
+   HorizontalOptions="Center"
+   Grid.Column="2"
+   />
+                    <Label Text="a"
+   FontSize="60"
+   VerticalOptions="Center"
+   HorizontalOptions="Center"
+   Grid.Column="3"
+   />
+                    <Label Text="d"
+   FontSize="60"
+   VerticalOptions="Center"
+   HorizontalOptions="Center"
+   Grid.Column="4"
+   />
+                    <Label Text="e"
+   FontSize="60"
+   VerticalOptions="Center"
+   HorizontalOptions="Center"
+   Grid.Column="5"
+   />
+                    <Label Text="_"
+       FontSize="60"
+       VerticalOptions="Center"
+                           Padding="0,5,0,0"
+       HorizontalOptions="Center"
+       Grid.Column="0"
+       />
+                    <Label Text="_"
+FontSize="60"
+VerticalOptions="Center"
+                           Padding="0,5,0,0"
+HorizontalOptions="Center"
+Grid.Column="1"
+/>
+                    <Label Text="_"
+FontSize="60"
+VerticalOptions="Center"
+                           Padding="0,5,0,0"
+HorizontalOptions="Center"
+Grid.Column="2"
+/>
+                    <Label Text="_"
+FontSize="60"
+VerticalOptions="Center"
+                           Padding="0,5,0,0"
+HorizontalOptions="Center"
+Grid.Column="3"
+/>
+                    <Label Text="_"
+FontSize="60"
+VerticalOptions="Center"
+                           Padding="0,5,0,0"
+HorizontalOptions="Center"
+Grid.Column="4"
+/>
+                    <Label Text="_"
+FontSize="60"
+VerticalOptions="Center"
+                           Padding="0,5,0,0"
+HorizontalOptions="Center"
+Grid.Column="5"
+/>
+                </Grid>
 
-            </StackLayout>
+                <!--</StackLayout>-->
+                </Grid>
 
             <Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
                 <Grid.RowDefinitions>
@@ -94,90 +192,151 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
 
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Row="0"
                     Grid.Column="0"
-                    Text="A"
+                    Text="a"
                     WidthRequest="80"
                     HeightRequest="80"
                     BackgroundColor="#666"
                     TextColor="White"
                     FontSize="48"
-                />
+                    HorizontalOptions="Center"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="Black"
+                    Radius="10"
+                    Opacity="0.9"></Shadow>
+                    </Button.Shadow>
+
+                </Button>
                 <Button Grid.Row="0"
                     Grid.Column="1"
-                    Text="B"
+                    Text="b"
                     WidthRequest="80"
                     HeightRequest="80"
                     BackgroundColor="#666"
                     TextColor="White"
-
+                    HorizontalOptions="Center"
                     FontSize="48"
-                />
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="Black"
+                    Radius="10"
+                    Opacity="0.9"></Shadow>
+                    </Button.Shadow>
+
+                </Button>
                 <Button Grid.Row="0"
                     Grid.Column="2"
-                    Text="C"
+                    Text="c"
                    WidthRequest="80"
                     HeightRequest="80"
                     BackgroundColor="#666"
                     TextColor="White"
-
+                       HorizontalOptions="Center"
                     FontSize="48"
-                />
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="Black"
+                    Radius="10"
+                    Opacity="0.9"></Shadow>
+                    </Button.Shadow>
+
+                </Button>
                 <Button Grid.Row="1"
                     Grid.Column="0"
-                    Text="D"
+                    Text="d"
                     WidthRequest="80"
                     HeightRequest="80"
                     BackgroundColor="#666"
                     TextColor="White"
-
+                        HorizontalOptions="Center"
                     FontSize="48"
-                />
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="Black"
+                    Radius="10"
+                    Opacity="0.9"></Shadow>
+                    </Button.Shadow>
+
+                </Button>
                 <Button Grid.Row="1"
                     Grid.Column="1"
-                    Text="E"
+                    Text="e"
                     WidthRequest="80"
                     HeightRequest="80"
                     BackgroundColor="#666"
                     TextColor="White"
-
+                    HorizontalOptions="Center"
                     FontSize="48"
-                />
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="Black"
+                    Radius="10"
+                    Opacity="0.9"></Shadow>
+                    </Button.Shadow>
+
+                </Button>
                 <Button Grid.Row="1"
                     Grid.Column="2"
-                    Text="F"
+                    Text="f"
                     WidthRequest="80"
                     HeightRequest="80"
                     BackgroundColor="#666"
                     TextColor="White"
-
+                    HorizontalOptions="Center"
                     FontSize="48"
-                />
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="Black"
+                    Radius="10"
+                    Opacity="0.9"></Shadow>
+                    </Button.Shadow>
+
+                </Button>
                 <Button Grid.Row="0"
                     Grid.Column="3"
-                    Text="↑"
-                    WidthRequest="60"
-                    HeightRequest="60"
-                        CornerRadius="30"
+                    Text="⌫"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    CornerRadius="25"
                     BackgroundColor="#666"
                     TextColor="White"
-
                     FontSize="32"
-                />
+                        Padding="0,0,0, 5"
+                        HorizontalOptions="Center"
+                >
+                    <Button.Shadow>
+                        <Shadow Brush="Black"
+                    Radius="10"
+                    Opacity="0.9"></Shadow>
+                    </Button.Shadow>
+
+                </Button>
                 <Button Grid.Row="1"
                     Grid.Column="3"
-                    Text="⌫"
-                    WidthRequest="60"
-                    HeightRequest="60"
-                    BackgroundColor="Transparent"
-                    TextColor="#333"
-                    BorderWidth="0"
-                    FontSize="36"
-                />
+                    Text="↵"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    CornerRadius="25"
+                    BackgroundColor="#666"
+                    TextColor="White"
+                    FontSize="70"
+                        Clicked="Button_Clicked"
+                        HorizontalOptions="Center"
+                        Padding="0,-15,0, 10">
+                    <Button.Shadow>
+                        <Shadow Brush="Black"
+                                    Radius="10"
+                                    Opacity="0.9"></Shadow>
+                        </Button.Shadow>
+                    
+                </Button>
+                  
 
 
             </Grid>

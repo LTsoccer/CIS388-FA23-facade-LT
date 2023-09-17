@@ -2,11 +2,77 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.GameOverPage"
-             Title="GameOverPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="#facade">
+
+    <ScrollView>
+
+    <Grid Padding="0" RowSpacing="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+
+        <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="30" Margin="10"/>
+            <Grid Padding="0" Grid.Row="0" ColumnSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition Width="0.7*" />
+                </Grid.ColumnDefinitions>
+
+
+                <!--<StackLayout HorizontalOptions="Fill"  Padding="60" Grid.Row="0" Orientation="Horizontal"  >-->
+                <Label Text="#" FontSize="60" VerticalOptions="Start" HorizontalOptions="End" Grid.Row =" 1" Grid.Column="0"/>
+                <Label Text="facade"
+           FontSize="60"
+           VerticalOptions="Start"
+           HorizontalOptions="Start"
+           Grid.Column="1"
+            Grid.Row="1"
+           />
+                <Label Text="secret color:"
+                    FontSize="36"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.ColumnSpan="2"
+                       Grid.Row="0"
+/>
+
+            </Grid>
+
+                <Label 
+                Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                x:Name="ResultLabel"
+                Text=""
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                FontSize="40"/>
+
+
+            <Button Grid.Row="2"
+                Text="restart"
+                BackgroundColor="#666"
+                TextColor="White"
+                FontSize="48"
+                    Margin="20"
+                    Clicked="Restart_Button_Clicked"
+                    >
+                <Button.Shadow>
+                    <Shadow Brush="Black"
+                    Radius="10"
+                    Opacity="0.9"></Shadow>
+                </Button.Shadow>
+
+            </Button>
+
+
+        </Grid>
+    </ScrollView>
 </ContentPage>

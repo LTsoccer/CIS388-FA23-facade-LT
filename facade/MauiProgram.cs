@@ -11,12 +11,15 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+				fonts.AddFont("Mooli-Regular.ttf", "MooliRegular");
+				
+            });
+
+		builder.Services.AddTransient<GameOverPage>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
+		
 #endif
 
 		return builder.Build();

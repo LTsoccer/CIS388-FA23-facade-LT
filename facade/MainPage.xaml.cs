@@ -1,18 +1,20 @@
-﻿namespace facade;
+﻿using System;
+namespace facade;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    public bool DidWin { get; set; } = true;
 
 	public MainPage()
 	{
 		InitializeComponent();
+
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		
-	}
+    async void Button_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
+    }
 }
 
 
