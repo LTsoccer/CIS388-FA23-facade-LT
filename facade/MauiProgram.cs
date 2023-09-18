@@ -11,7 +11,7 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("Mooli-Regular.ttf", "MooliRegular");
+				fonts.AddFont("Mooli-Regular.ttf", "Mooli");
 				
             });
 
