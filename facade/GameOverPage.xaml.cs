@@ -12,7 +12,8 @@ public partial class GameOverPage : ContentPage
 		set
 		{
 			didWin = value;
-			if (didWin) { ResultLabel.Text = $"you won!\nit took you {guessnumber} guesses"; }
+			if (didWin) { ResultLabel.Text = $"you won!\nit took {guessnumber} guesses";
+			}
 			else
 			{
                 { ResultLabel.Text = "you lost..."; }

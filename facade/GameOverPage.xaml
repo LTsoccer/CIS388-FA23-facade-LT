@@ -28,13 +28,14 @@
 
 
                 <!--<StackLayout HorizontalOptions="Fill"  Padding="60" Grid.Row="0" Orientation="Horizontal"  >-->
-                <Label Text="#" FontSize="60" VerticalOptions="Start" HorizontalOptions="End" Grid.Row =" 1" Grid.Column="0"/>
+                <Label Text="#" FontSize="60" VerticalOptions="Start" FontFamily="MooliRegular" HorizontalOptions="End" Grid.Row =" 1" Grid.Column="0"/>
                 <Label Text="facade"
            FontSize="60"
            VerticalOptions="Start"
            HorizontalOptions="Start"
            Grid.Column="1"
             Grid.Row="1"
+                       FontFamily="MooliRegular"
            />
                 <Label Text="secret color:"
                     FontSize="36"
@@ -42,6 +43,7 @@
                     HorizontalOptions="Center"
                     Grid.ColumnSpan="2"
                        Grid.Row="0"
+                       FontFamily="MooliRegular"
 />
 
             </Grid>
@@ -53,6 +55,8 @@
                 Text=""
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" 
+                    HorizontalTextAlignment="Center"
+                    FontFamily="MooliRegular"
                 FontSize="40"/>
 
 
@@ -61,6 +65,7 @@
                 BackgroundColor="#666"
                 TextColor="White"
                 FontSize="48"
+                    FontFamily="MooliRegular"
                     Margin="20"
                     Clicked="Restart_Button_Clicked"
                     >

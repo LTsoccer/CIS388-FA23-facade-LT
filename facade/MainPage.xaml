@@ -24,13 +24,13 @@
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.27*" />
-                    <ColumnDefinition Width="0.5*" />
-                    <ColumnDefinition Width="0.23*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="0.2*" />
                 </Grid.ColumnDefinitions>
 
            
             <!--<StackLayout HorizontalOptions="Fill"  Padding="60" Grid.Row="0" Orientation="Horizontal"  >-->
-                <Label Text="#" FontSize="60" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="0"/>
+                <Label Text="#" FontSize="60" FontFamily="MooliRegular" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="0"/>
                 <Grid Padding="0" Grid.Row="1" Grid.Column="1" ColumnSpacing="1">
 
                     <Grid.ColumnDefinitions>
@@ -43,79 +43,91 @@
                     </Grid.ColumnDefinitions>
                     <Label Text="f"
                        FontSize="60"
+                           FontFamily="MooliRegular"
                        VerticalOptions="Center"
                        HorizontalOptions="Center"
                        Grid.Column="0"
                        />
                     <Label Text="a"
    FontSize="60"
+                           FontFamily="MooliRegular"
    VerticalOptions="Center"
    HorizontalOptions="Center"
    Grid.Column="1"
    />
                     <Label Text="c"
    FontSize="60"
+                           FontFamily="MooliRegular"
    VerticalOptions="Center"
    HorizontalOptions="Center"
    Grid.Column="2"
    />
                     <Label Text="a"
    FontSize="60"
+                           FontFamily="MooliRegular"
    VerticalOptions="Center"
    HorizontalOptions="Center"
    Grid.Column="3"
    />
                     <Label Text="d"
    FontSize="60"
+                           FontFamily="MooliRegular"
    VerticalOptions="Center"
    HorizontalOptions="Center"
    Grid.Column="4"
    />
                     <Label Text="e"
    FontSize="60"
+                           FontFamily="MooliRegular"
    VerticalOptions="Center"
    HorizontalOptions="Center"
    Grid.Column="5"
    />
                     <Label Text="_"
        FontSize="60"
+                           FontFamily="MooliRegular"
        VerticalOptions="Center"
-                           Padding="0,5,0,0"
+                           Padding="0,20,0,0"
        HorizontalOptions="Center"
        Grid.Column="0"
        />
                     <Label Text="_"
 FontSize="60"
+                           FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,5,0,0"
+                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="1"
 />
                     <Label Text="_"
 FontSize="60"
+                           FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,5,0,0"
+                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="2"
 />
                     <Label Text="_"
 FontSize="60"
+                           FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,5,0,0"
+                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="3"
 />
                     <Label Text="_"
 FontSize="60"
+                           FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,5,0,0"
+                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="4"
 />
                     <Label Text="_"
 FontSize="60"
+                           FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,5,0,0"
+                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="5"
 />
@@ -141,18 +153,21 @@ Grid.Column="5"
                     Text="#beaded"
                     BackgroundColor="#beaded"
                     FontSize="16"
+                        FontFamily="MooliRegular"
                     IsEnabled="false "/>
                 <Button Grid.Row="0"
                     Grid.Column="1"
                     Text="#fadedd"
                     BackgroundColor="#fadedd"
                     FontSize="16"
+                        FontFamily="MooliRegular"
                     IsEnabled="false "/>
                 <Button Grid.Row="0"
                     Grid.Column="2"
                     Text="#beefed"
                     BackgroundColor="#beefed"
                     FontSize="16"
+                        FontFamily="MooliRegular"
                     IsEnabled="false "/>
 
                 <Button Grid.Row="1"
@@ -162,6 +177,7 @@ Grid.Column="5"
                     BorderColor="#111"
                     BorderWidth="1"
                     FontSize="16"
+                        FontFamily="MooliRegular"
                     IsEnabled="false "/>
                 <Button Grid.Row="1"
                     Grid.Column="1"
@@ -170,6 +186,7 @@ Grid.Column="5"
                     BorderColor="#111"
                     BorderWidth="1"
                     FontSize="16"
+                        FontFamily="MooliRegular"
                     IsEnabled="false "/>
                 <Button Grid.Row="1"
                     Grid.Column="2"
@@ -178,6 +195,7 @@ Grid.Column="5"
                     BorderColor="#111"
                     BorderWidth="1"
                     FontSize="16"
+                        FontFamily="MooliRegular"
                     IsEnabled="false "/>
 
             </Grid>
@@ -204,6 +222,7 @@ Grid.Column="5"
                     BackgroundColor="#666"
                     TextColor="White"
                     FontSize="48"
+                        FontFamily="MooliRegular"
                     HorizontalOptions="Center"
                 >
                     <Button.Shadow>
@@ -222,6 +241,7 @@ Grid.Column="5"
                     TextColor="White"
                     HorizontalOptions="Center"
                     FontSize="48"
+                        FontFamily="MooliRegular"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -239,6 +259,7 @@ Grid.Column="5"
                     TextColor="White"
                        HorizontalOptions="Center"
                     FontSize="48"
+                        FontFamily="MooliRegular"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -256,6 +277,7 @@ Grid.Column="5"
                     TextColor="White"
                         HorizontalOptions="Center"
                     FontSize="48"
+                        FontFamily="MooliRegular"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -273,6 +295,7 @@ Grid.Column="5"
                     TextColor="White"
                     HorizontalOptions="Center"
                     FontSize="48"
+                        FontFamily="MooliRegular"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -290,6 +313,7 @@ Grid.Column="5"
                     TextColor="White"
                     HorizontalOptions="Center"
                     FontSize="48"
+                        FontFamily="MooliRegular"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -309,6 +333,7 @@ Grid.Column="5"
                     FontSize="32"
                         Padding="0,0,0, 5"
                         HorizontalOptions="Center"
+                        FontFamily="MooliRegular"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -326,8 +351,10 @@ Grid.Column="5"
                     BackgroundColor="#666"
                     TextColor="White"
                     FontSize="70"
+                        FontFamily="MooliRegular"
                         Clicked="Button_Clicked"
                         HorizontalOptions="Center"
+                        
                         Padding="0,-15,0, 10">
                     <Button.Shadow>
                         <Shadow Brush="Black"
