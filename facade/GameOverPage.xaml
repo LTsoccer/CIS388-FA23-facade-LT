@@ -1,8 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="facade.GameOverPage"
-             Title="#facade">
+             x:Class="facade.GameOverPage">
+    <Shell.TitleView >
+        <Grid Padding="0" RowSpacing="16" VerticalOptions="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="0.6*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="#facade"
+FontSize="20"
+VerticalOptions="Center"
+HorizontalOptions="Start"
+                   Grid.Column="0"
+            FontFamily="MooliRegular"
+               TextColor="white"
+/>
+            <Border Stroke="white"
+        StrokeThickness="1"
+        StrokeShape="RoundRectangle 20,20,20,20"
+                                       Margin="0,0,20,0"
+                    Background="Transparent"
+                    Grid.Column="2"
+                    WidthRequest="25"
+        HorizontalOptions="Center">
+                <Label Text="?"
+FontSize="15"
+                   
+VerticalOptions="Center"
+HorizontalOptions="Center"
+            FontFamily="MooliRegular"
+               TextColor="white"
+/>
+            </Border>
+        </Grid>
+
+    </Shell.TitleView>
 
     <ScrollView>
 
