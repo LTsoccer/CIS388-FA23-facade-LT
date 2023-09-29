@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="facade.GameOverPage">
+             x:Class="facade.GameOverPage"
+             xmlns:local="clr-namespace:facade"
+            x:DataType="local:GameOverPageViewModel">
     <Shell.TitleView >
         <Grid Padding="0" RowSpacing="16" VerticalOptions="Center">
             <Grid.ColumnDefinitions>
@@ -17,7 +19,32 @@ HorizontalOptions="Start"
             FontFamily="MooliRegular"
                TextColor="white"
 />
-            <Border Stroke="white"
+            <Button
+            Grid.Column="2"
+                Text="?"
+            Padding="0,0,1,0"
+            HeightRequest="25"
+            WidthRequest="25"
+        Margin="0,0,10,0"
+            BackgroundColor="Transparent"
+            CornerRadius="20"
+             BorderWidth="1"
+            BorderColor="white"
+            TextColor="white"
+            FontSize="15"
+                   HorizontalOptions="Center"
+                VerticalOptions="Center"
+                    FontFamily="MooliRegular"
+            Command="{Binding HelpCommand}"
+        >
+                <Button.Shadow>
+                    <Shadow Brush="Black"
+Radius="10"
+Opacity="0.9"></Shadow>
+                </Button.Shadow>
+
+            </Button>
+            <!--<Border Stroke="white"
         StrokeThickness="1"
         StrokeShape="RoundRectangle 20,20,20,20"
                                        Margin="0,0,20,0"
@@ -33,7 +60,7 @@ HorizontalOptions="Center"
             FontFamily="MooliRegular"
                TextColor="white"
 />
-            </Border>
+            </Border>-->
         </Grid>
 
     </Shell.TitleView>
@@ -42,13 +69,13 @@ HorizontalOptions="Center"
 
     <Grid Padding="0" RowSpacing="16">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.7*" />
+            <RowDefinition Height="0.6*" />
             <RowDefinition Height="0.3*" />
             <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
 
-        <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="30" Margin="10"/>
+        <RoundRectangle Grid.Row="0"  Fill="{Binding Colorhex}" CornerRadius="30" Margin="10"/>
             <Grid Padding="0" Grid.Row="0" ColumnSpacing="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -56,14 +83,15 @@ HorizontalOptions="Center"
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.3*" />
-                    <ColumnDefinition Width="0.7*" />
+                    <ColumnDefinition Width="0.29*" />
+                    <ColumnDefinition Width="0.71*" />
                 </Grid.ColumnDefinitions>
 
 
                 <!--<StackLayout HorizontalOptions="Fill"  Padding="60" Grid.Row="0" Orientation="Horizontal"  >-->
                 <Label Text="#" FontSize="60" VerticalOptions="Start" FontFamily="MooliRegular" HorizontalOptions="End" Grid.Row =" 1" Grid.Column="0"/>
-                <Label Text="facade"
+                <Label 
+                    Text="{Binding SecretColor}"
            FontSize="60"
            VerticalOptions="Start"
            HorizontalOptions="Start"
@@ -85,8 +113,7 @@ HorizontalOptions="Center"
                 <Label 
                 Grid.Row="1"
                    Grid.ColumnSpan="2"
-                x:Name="ResultLabel"
-                Text=""
+                Text="{Binding Text}"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" 
                     HorizontalTextAlignment="Center"
@@ -101,7 +128,7 @@ HorizontalOptions="Center"
                 FontSize="48"
                     FontFamily="MooliRegular"
                     Margin="20"
-                    Clicked="Restart_Button_Clicked"
+                    Command="{Binding RestartCommand}"
                     >
                 <Button.Shadow>
                     <Shadow Brush="Black"

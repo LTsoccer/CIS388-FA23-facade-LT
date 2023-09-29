@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:facade"
              x:Class="facade.MainPage"
+             x:DataType="local:MainPageViewModel"
              >
     <Shell.TitleView >
         <Grid Padding="0" RowSpacing="16" VerticalOptions="Center">
@@ -18,23 +20,49 @@ HorizontalOptions="Start"
             FontFamily="MooliRegular"
                TextColor="white"
 />
-            <Border Stroke="white"
+            <!--<Border Stroke="white"
         StrokeThickness="1"
         StrokeShape="RoundRectangle 20,20,20,20"
                                        Margin="0,0,20,0"
                     Background="Transparent"
                     Grid.Column="2"
                     WidthRequest="25"
-        HorizontalOptions="Center">
+        HorizontalOptions="Center"
+                    >
                 <Label Text="?"
 FontSize="15"
-                   
 VerticalOptions="Center"
 HorizontalOptions="Center"
             FontFamily="MooliRegular"
                TextColor="white"
 />
-            </Border>
+            </Border>-->
+
+            <Button
+                Grid.Column="2"
+                    Text="?"
+                Padding="0,0,1,0"
+                HeightRequest="25"
+                WidthRequest="25"
+            Margin="0,0,10,0"
+                BackgroundColor="Transparent"
+                CornerRadius="20"
+                 BorderWidth="1"
+                BorderColor="white"
+                TextColor="white"
+                FontSize="15"
+                       HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                        FontFamily="MooliRegular"
+                Command="{Binding HelpCommand}"
+            >
+                <Button.Shadow>
+                    <Shadow Brush="Black"
+    Radius="10"
+    Opacity="0.9"></Shadow>
+                </Button.Shadow>
+
+            </Button>
         </Grid>
 
     </Shell.TitleView>
@@ -48,8 +76,8 @@ HorizontalOptions="Center"
 
 
             </Grid.RowDefinitions>
-            
-            <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="30" Margin="10"/>
+
+            <RoundRectangle Grid.Row="0" Fill="{Binding SecretColorHex}" CornerRadius="30" Margin="10"/>
 
             <Grid Padding="0" Grid.Row="0" ColumnSpacing="1">
                 <Grid.RowDefinitions>
@@ -57,15 +85,50 @@ HorizontalOptions="Center"
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.27*" />
+                    <ColumnDefinition Width="0.29*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.23*" />
                 </Grid.ColumnDefinitions>
 
            
             <!--<StackLayout HorizontalOptions="Fill"  Padding="60" Grid.Row="0" Orientation="Horizontal"  >-->
-                <Label Text="#" FontSize="60" FontFamily="MooliRegular" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="0"/>
-                <Grid Padding="0" Grid.Row="1" Grid.Column="1" ColumnSpacing="1">
+                <Label Text="#" FontSize="60" FontFamily="MooliRegular" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="0" Margin="0,0,0,15"/>
+                <!--<Label Text="{Binding CurrentGuess}"
+                       FontSize="60"
+                        CharacterSpacing="1"
+                       FontFamily="MooliRegular"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Padding="10,0,0,0"
+                       Grid.Column="1"/>-->
+
+                <CollectionView
+HeightRequest="100"
+                    Grid.Column="1"
+ItemsSource="{Binding Letters}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+        Orientation="Vertical"
+                       Span="6"
+                        
+        />
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label
+            Text="{Binding}"
+                                                FontFamily="MooliRegular"
+VerticalOptions="Center"
+ HorizontalOptions="Center"
+                                Margin="4,0,4,0"
+            FontSize="60"/>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Grid Padding="0" Grid.Row="1" Grid.Column="1" ColumnSpacing="3">
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -75,102 +138,126 @@ HorizontalOptions="Center"
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Label Text="f"
-                       FontSize="60"
-                           FontFamily="MooliRegular"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center"
-                       Grid.Column="0"
-                       />
-                    <Label Text="a"
-   FontSize="60"
-                           FontFamily="MooliRegular"
-   VerticalOptions="Center"
-   HorizontalOptions="Center"
-   Grid.Column="1"
+                    
+
+
+                    <!--<Label Text="{Binding Letters[0]}"
+                    FontSize="60"
+                     FontFamily="MooliRegular"
+     VerticalOptions="Center"
+      HorizontalOptions="Center"
+     Grid.Column="0"
    />
-                    <Label Text="c"
-   FontSize="60"
-                           FontFamily="MooliRegular"
-   VerticalOptions="Center"
+                    <Label Text="{Binding Letters[1]}"
+                 FontSize="60"
+                  FontFamily="MooliRegular"
+  VerticalOptions="Center"
    HorizontalOptions="Center"
-   Grid.Column="2"
-   />
-                    <Label Text="a"
-   FontSize="60"
-                           FontFamily="MooliRegular"
-   VerticalOptions="Center"
+  Grid.Column="1"
+/>
+                    <Label Text="{Binding Letters[2]}"
+                 FontSize="60"
+                  FontFamily="MooliRegular"
+  VerticalOptions="Center"
    HorizontalOptions="Center"
-   Grid.Column="3"
-   />
-                    <Label Text="d"
-   FontSize="60"
-                           FontFamily="MooliRegular"
-   VerticalOptions="Center"
+  Grid.Column="2"
+/>
+                    <Label Text="{Binding Letters[3]}"
+                 FontSize="60"
+                  FontFamily="MooliRegular"
+  VerticalOptions="Center"
    HorizontalOptions="Center"
-   Grid.Column="4"
-   />
-                    <Label Text="e"
-   FontSize="60"
-                           FontFamily="MooliRegular"
-   VerticalOptions="Center"
+  Grid.Column="3"
+/>
+                    <Label Text="{Binding Letters[4]}"
+                 FontSize="60"
+                  FontFamily="MooliRegular"
+  VerticalOptions="Center"
    HorizontalOptions="Center"
-   Grid.Column="5"
-   />
+  Grid.Column="4"
+/>
+                    <Label Text="{Binding Letters[5]}"
+                 FontSize="60"
+                  FontFamily="MooliRegular"
+  VerticalOptions="Center"
+   HorizontalOptions="Center"
+  Grid.Column="5"
+/>-->
+
                     <Label Text="_"
-       FontSize="60"
-                           FontFamily="MooliRegular"
-       VerticalOptions="Center"
-                           Padding="0,20,0,0"
-       HorizontalOptions="Center"
-       Grid.Column="0"
-       />
+    FontSize="60"
+                       FontFamily="MooliRegular"
+    VerticalOptions="Center"
+    HorizontalOptions="Center"
+    Grid.Column="0"
+    />
                     <Label Text="_"
 FontSize="60"
-                           FontFamily="MooliRegular"
+                   FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="1"
 />
                     <Label Text="_"
 FontSize="60"
-                           FontFamily="MooliRegular"
+                   FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="2"
 />
                     <Label Text="_"
 FontSize="60"
-                           FontFamily="MooliRegular"
+                   FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="3"
 />
                     <Label Text="_"
 FontSize="60"
-                           FontFamily="MooliRegular"
+                   FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="4"
 />
                     <Label Text="_"
 FontSize="60"
-                           FontFamily="MooliRegular"
+                   FontFamily="MooliRegular"
 VerticalOptions="Center"
-                           Padding="0,20,0,0"
 HorizontalOptions="Center"
 Grid.Column="5"
 />
+           
                 </Grid>
 
                 <!--</StackLayout>-->
                 </Grid>
+            <CollectionView
+                HeightRequest="150"
+                Grid.Row="1"
+                
+                ItemsSource="{Binding Guesses}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="3"
+                        />
+                </CollectionView.ItemsLayout>
 
-            <Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="local:ColorGuess">
+                        <Button 
+                            Padding="10"
+                            Margin="10"
+                            Text="{Binding Guess}"
+                            BackgroundColor="{Binding Color}"
+                            FontSize="16"
+                            IsEnabled="false "/>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!--<Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -232,7 +319,7 @@ Grid.Column="5"
                         FontFamily="MooliRegular"
                     IsEnabled="false "/>
 
-            </Grid>
+            </Grid>-->
 
             <Grid Padding="12" Grid.Row="2" RowSpacing="12" ColumnSpacing="12">
                 <Grid.RowDefinitions>
@@ -258,6 +345,8 @@ Grid.Column="5"
                     FontSize="48"
                         FontFamily="MooliRegular"
                     HorizontalOptions="Center"
+                        Command="{Binding AddLetterCommand}"
+                    CommandParameter="a"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -276,6 +365,8 @@ Grid.Column="5"
                     HorizontalOptions="Center"
                     FontSize="48"
                         FontFamily="MooliRegular"
+                        Command="{Binding AddLetterCommand}"
+                    CommandParameter="b"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -294,6 +385,8 @@ Grid.Column="5"
                        HorizontalOptions="Center"
                     FontSize="48"
                         FontFamily="MooliRegular"
+                        Command="{Binding AddLetterCommand}"
+                    CommandParameter="c"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -312,6 +405,8 @@ Grid.Column="5"
                         HorizontalOptions="Center"
                     FontSize="48"
                         FontFamily="MooliRegular"
+                        Command="{Binding AddLetterCommand}"
+                    CommandParameter="d"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -330,6 +425,8 @@ Grid.Column="5"
                     HorizontalOptions="Center"
                     FontSize="48"
                         FontFamily="MooliRegular"
+                        Command="{Binding AddLetterCommand}"
+                    CommandParameter="e"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -348,6 +445,8 @@ Grid.Column="5"
                     HorizontalOptions="Center"
                     FontSize="48"
                         FontFamily="MooliRegular"
+                        Command="{Binding AddLetterCommand}"
+                    CommandParameter="f"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -368,6 +467,7 @@ Grid.Column="5"
                         Padding="0,0,0, 5"
                         HorizontalOptions="Center"
                         FontFamily="MooliRegular"
+                        Command="{Binding DeleteLetterCommand}"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Black"
@@ -386,9 +486,8 @@ Grid.Column="5"
                     TextColor="White"
                     FontSize="70"
                         FontFamily="MooliRegular"
-                        Clicked="Button_Clicked"
                         HorizontalOptions="Center"
-                        
+                        Command="{Binding GuessCommand}"
                         Padding="0,-15,0, 10">
                     <Button.Shadow>
                         <Shadow Brush="Black"
